@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage builder</title>
+    <style>
+        .cards{
+            display:flex;
+            border-radius: 8px;
+            background-color: rgb(43, 43, 43);
+            width: 1100px;
+            margin:8px;
+            padding:12px;
+        }
+
+        .image{
+            position:relative;
+            left:5px;
+           
+           
+        }
+        .image img{
+             width:300px;
+             border-radius: 8px;
+        }
+        .capsule{
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            z-index:10;
+            background-color: rgb(62, 62, 62);
+            color:white; 
+            border-radius: 3px;
+            opacity:0.8;
+            font-size: 18px;
+            padding: 3px;
+
+        }
+        .text h1,p{
+            color:white;
+            padding: 2px 30px;
+        
+        }
+        
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cards">
+        <div class="image">
+            <img src=https://i.ytimg.com/vi/ER9SspLe4Hg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBIjme99R-l_yHv0C9V5uitvb5CoA >
+            <div class="capsule">36:00</div>
+        </div>
+        <div class="text">
+         <h1>
+            Introduction To JS 
+         </h1>
+         <p>Code With Harry . 727k views . 2 months ago</p>
+        </div>
+    </div>
+    </div>
+    <script src="script.js" ></script>
+ 
+    
+</body>
+</html>

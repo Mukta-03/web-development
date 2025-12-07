@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inserting and removing elements</title>
+</head>
+<body>
+    <!--for temp change- innerhtml,
+    innertext,(for both box,container ),
+    outerhtml,
+    outertext,
+    tagname,
+    nodename(for all nodes eg comment node textnodeetc.),textcontent,
+    hidden=true,
+    innerhtml="changedtext",
+    ,attributes(to get all attributes),
+    .hasattribute("style"),(to add style ),
+    getattribute("style"),setattribute
+    (to change-)use attribute(eg, "style","display:inline"),removeattribute(""),
+    (use designmode="on" to change any website ),
+    (to create a data attribute use data- property... eg data-createdby="harry"), 
+    now to check this data attribute use .dataset, 
+    
+    to create element in js-use .createelement(""),
+    (to set attribute for the created element)setattribute("","".. )... 
+    now to add it in container...use append (eg.document.queryselector.(".container).append(div),  
+    use inner html to add content (like- div.innerhtml("content")),
+    differnt types of functions like append-prepend,before,after,replacewith
+    (to insert) insertadjacenthtml/text/element-(for eg-let cont=document.queryselector(".container")
+    cont.insertadjacenthtml("afterend","content"), (more like afterend- afterbegin,beforebegin,beforeend),to remove any node- node.remove()
+
+    (to get all classes of a container)-node.classlist
+    same for classname
+    to add/remove any class-classlist.add/remove("newclass")
+    classlist.toggle("abcclassname")...this is used to add a class if not available and vice versa-->
+
+    <div class="container">
+        <div class="box boxes bigboxes" style="color:red" data-createdby="John">This is a box</div>
+    </div>
+
+    <script>
+        let div=document.createElement("div")
+         div.innerHTML="This is a new Element with two attributes"
+        div.setAttribute("Att1","Att2")
+        // before/after are used to insert before and after a the container inside body and append/prepend are for inside container
+        document.querySelector(".container").append(div)
+        document.querySelector(".container").prepend(div)
+        document.querySelector(".container").after(div)
+        document.querySelector(".container").before(div)
+        
+
+        let cont=document.querySelector(".container")
+    //    cont.insertAdjacentHTML("afterend","this is inserted via insertadjacenthtml")
+    //    cont.insertAdjacentHTML("beforeend","this is inserted via insertadjacenthtml")
+    //    cont.insertAdjacentHTML("afterbegin","this is inserted via insertadjacenthtml")
+       cont.insertAdjacentHTML("beforebegin","this is inserted via insertadjacenthtml")
+
+    //    document.querySelector("div").remove()
+    </script>
+        
+</body>
+</html>
