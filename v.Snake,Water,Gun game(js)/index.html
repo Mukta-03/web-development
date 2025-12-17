@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake,Water,Gun Game</title>
+</head>
+
+<body>
+    <script>
+        const choice = ['S', 'W', 'G']
+        let round = 0;
+        let uscore = 0;
+        let cscore = 0;
+        alert("Welcome to the snake, water, gun game")
+        
+        while (round < 3) {
+            let cchoice = choice[Math.floor(Math.random() * choice.length)]
+
+            let uchoice = prompt("Press S, W, or G to choose Snake,Water or Gun respectively")
+            alert("Your opponant's choice is "+cchoice)
+
+            if (uchoice === 'S' && cchoice === 'W' || uchoice === 'W' && cchoice === 'G' || uchoice === 'G' && cchoice === 'S') {
+                uscore++
+            }
+            else if(uchoice===cchoice) {
+                alert("it's a draw,will not be counted")
+               continue;
+            //    this continue statement make the loop continue
+            }
+            else{
+                cscore++
+            }
+
+            round++
+        }
+
+        if(uscore>cscore){
+            alert("congrats!... you won the game and your score is "+ uscore+"/3")
+        }
+        else{
+            alert("alas!... you lose the game and your score is "+ uscore+"/3")
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
