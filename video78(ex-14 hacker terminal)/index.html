@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackers terminal</title>
+  <style>
+    body {
+      background-color: green;
+      color:white;
+      font-size: large;
+
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- create a hackers simulator which has green background and it shows these messages with random delay of 1-7 seconds 
+     messages are-
+     initializing hacking...
+     reading your files...
+     password files detected...
+     sending all passwords and personal files to server...
+     cleaning up...
+
+     these three dots must blink,one by one and disappear and then appear again one by one so that it look like a real ternminal -->
+
+     <div>initializing hacking...</div>
+  
+  <script>
+    const addItem= async (msg)=>{
+            await randomdelay()
+            let div=document.createElement("div")
+           div.innerHTML=msg
+           document.body.append(div)
+          }
+
+    // to find a random no between some range- a+b-a*math.random
+    const randomdelay=()=>{
+      return new Promise((resolve,reject)=>{
+        timeout=1+6*Math.random()
+        setTimeout(() => {
+          resolve()
+        }, timeout*1000);
+      })
+    }
+     async function main(){
+
+      let t=setInterval(() => {
+        let last=document.body.lastElementChild
+        if(last.innerHTML.endsWith("...")){
+        last.innerHTML=last.innerHTML.slice(0,last.innerHTML.length-3)
+        }
+        else{
+        last.innerHTML=last.innerHTML+"."
+        }
+      }, 500);
+    // /here is the array of messages
+    let messages = [
+      "initializing hacking",
+      "reading your files",
+      "password files detected",
+      "sending all passwords and personal files to server",
+      "cleaning up"          
+        ]
+    
+        
+          // here we have used for of loop , bcz it used for array...here msg is the element of array and messages is the array name
+          for(const msg of messages){
+            await addItem(msg)
+          }
+          await randomdelay()
+       clearInterval(t)     
+    
+        }
+        main()
+          
+       
+  </script>
+</body>
+
+</html>
